@@ -33,7 +33,7 @@ export class MainComponent implements OnInit {
       this.provider.auth(this.login, this.password).then(res => {
         localStorage.setItem('token', res.token);
         this.authorized = true;
-        //getPosts
+        
       });
     }
   }
