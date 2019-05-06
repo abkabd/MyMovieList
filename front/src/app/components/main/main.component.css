@@ -1,0 +1,33 @@
+*{
+    background-color: yellow;
+}
+.login {
+    position: absolute;
+    left: 45%;
+    top: 300px;
+    text-align: center;
+    color: green;
+    padding: 30px;
+    border-radius: 14px;
+
+}
+
+.input{
+    margin-bottom: 15px;
+    line-height: 25px;
+    width: 130px;
+    border-radius: 4px;
+    border: solid green;
+    font-size: 14px;
+    padding-left: 3px;
+
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    font-size: 16px;
+}

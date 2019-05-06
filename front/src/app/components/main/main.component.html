@@ -1,18 +1,21 @@
+<body>
 <ng-container *ngIf="!authorized; else NotAuth">
-  <h1>Login Page</h1>
-  <input placeholder="Login" type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
-  <br>
-  <input placeholder="Password" type="password"  id="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
-  <br>
-  <div>
-    <button (click)="auth()">Log in</button>
-  </div>
+  <div class="login">
+    <h1>Welcome <br> to MyMovieList!</h1>
+    <input class="input" placeholder="Login" type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+    <br>
+    <input class="input" placeholder="Password" type="password"  id="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+    <br>
+    <div>
+      <button (click)="auth()">Log in</button>
+    </div>
+  </div>  
 
-</ng-container>
+  </ng-container>
 
-<ng-template #NotAuth>
-  <h1>{{login}} logged in!</h1>
-  
-  <button (click)="logout()">Log out</button>
-</ng-template>
-
+  <ng-template #NotAuth>
+    <h1>{{login}} logged in!</h1>
+    
+    <button (click)="logout()">Log out</button>
+  </ng-template>
+</body>
