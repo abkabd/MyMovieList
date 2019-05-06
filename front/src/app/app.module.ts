@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { HttpClient } from 'selenium-webdriver/http';
 import { ProviderService } from './shared/services/provider.service';
 
 @NgModule({
@@ -14,8 +13,7 @@ import { ProviderService } from './shared/services/provider.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClient
+    AppRoutingModule
   ],
   providers: [
     ProviderService
