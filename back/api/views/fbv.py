@@ -1,8 +1,8 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-# from api.models import
-# from api.serializers import
+# from api.models import Movie
+# from api.serializers import MovieSerializer
 
 @api_view(['GET', 'POST'])
 def get_movies(request):
