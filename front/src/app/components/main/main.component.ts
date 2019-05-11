@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProviderService } from '../../shared/services/provider.service'
+import { IMovie } from 'src/app/shared/models/models';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -11,11 +12,13 @@ export class MainComponent implements OnInit {
 
   public login = '';
   public password = ''; 
+  public movies: IMovie[] = [];
 
   constructor(private provider: ProviderService) {
   }
 
   ngOnInit() {
+    
     const token = localStorage.getItem('token');
     if (token) {
       this.authorized = true;
@@ -23,8 +26,10 @@ export class MainComponent implements OnInit {
 
     if (this.authorized) {
       console.log(token);
+      this.getMovies();
     }
 
+    
   }
 
   auth() {
@@ -42,6 +47,12 @@ export class MainComponent implements OnInit {
     this.provider.logout().then(res => {
       this.authorized = false;
       localStorage.clear();
+    });
+  }
+
+  getMovies() {
+    this.provider.getMovies().then(res => {
+      this.movies = res;
     });
   }
 }

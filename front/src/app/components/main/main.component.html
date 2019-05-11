@@ -1,5 +1,5 @@
 <body>
-<ng-container *ngIf="!authorized; else NotAuth">
+<ng-container *ngIf="!authorized; else Auth">
   <div class="login">
     <h1>Welcome <br> to MyMovieList!</h1>
     <input class="input" placeholder="Login" type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
@@ -13,8 +13,15 @@
 
   </ng-container>
 
-  <ng-template #NotAuth>
+  <ng-template #Auth>
     <h1>{{login}} logged in!</h1>
+    <ng-container>
+      <div *ngFor="let movie of Movies">
+        <ul>
+          <li>{{movie.title}}</li>
+        </ul>
+      </div>
+    </ng-container>
     
     <button (click)="logout()">Log out</button>
   </ng-template>

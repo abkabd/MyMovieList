@@ -22,5 +22,9 @@ export class ProviderService extends MainService {
     return this.post('http://localhost:8000/api/logout/', {});
   }
 
+  getMovies(): Promise<IMovie[]> {
+    return this.get('http://localhost:8000/api/movies/', {});
+  }
+
 
 }
