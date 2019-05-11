@@ -9,20 +9,30 @@
     <div>
       <button (click)="auth()">Log in</button>
     </div>
+    <ng-container>
+      <div *ngFor="let movie of all_movies">
+        <ul>
+          <li>{{movie.title}}</li>
+          <li>{{movie.prod_year}}</li>
+        </ul>
+      </div>
+    </ng-container>
   </div>  
 
   </ng-container>
 
   <ng-template #Auth>
     <h1>{{login}} logged in!</h1>
+    <button (click)="logout()">Log out</button>
+
     <ng-container>
-      <div *ngFor="let movie of Movies">
+      <div *ngFor="let movie of movies">
         <ul>
           <li>{{movie.title}}</li>
+          <li>{{movie.prod_year}}</li>
         </ul>
       </div>
     </ng-container>
     
-    <button (click)="logout()">Log out</button>
   </ng-template>
 </body>

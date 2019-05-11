@@ -11,3 +11,4 @@ class MovieList(generics.ListAPIView):
 
     def get_serializer_class(self):
         return MovieSerializer
+
