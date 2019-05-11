@@ -9,6 +9,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=200)
     rating = models.IntegerField()
     prod_year = models.IntegerField()
+    image = models.ImageField(upload_to='', blank=True, null=True)
     owned_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None, null=True)
 
     objects = MovieManager()
