@@ -23,6 +23,10 @@ export class ProviderService extends MainService {
   }
 
   getMovies(): Promise<IMovie[]> {
+    return this.get('http://localhost:8000/api/my_movies/', {});
+  }
+
+  getAllMovies(): Promise<IMovie[]>{
     return this.get('http://localhost:8000/api/movies/', {});
   }
 

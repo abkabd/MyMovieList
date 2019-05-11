@@ -13,11 +13,13 @@ export class MainComponent implements OnInit {
   public login = '';
   public password = ''; 
   public movies: IMovie[] = [];
+  public all_movies: IMovie[] = [];
 
   constructor(private provider: ProviderService) {
   }
 
   ngOnInit() {
+    this.getAllMovies();
     
     const token = localStorage.getItem('token');
     if (token) {
@@ -53,6 +55,12 @@ export class MainComponent implements OnInit {
   getMovies() {
     this.provider.getMovies().then(res => {
       this.movies = res;
+    });
+  }
+
+  getAllMovies(){
+    this.provider.getAllMovies().then(res => {
+      this.all_movies = res;
     });
   }
 }
