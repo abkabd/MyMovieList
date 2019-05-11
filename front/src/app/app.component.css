@@ -1,0 +1,8 @@
+.container{
+    background-color: linen;
+    opacity: 0.85;
+    min-height: 100%;
+}
+.container .container2{
+    opacity: 1;
+}

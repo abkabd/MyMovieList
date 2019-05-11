@@ -1,0 +1,12 @@
+header{
+    left: 0%;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 1300px;
+    height: auto;
+    display: block;
+    background: rgb(22, 22, 22);
+    background-color: gray;
+    position: fixed !important;
+    z-index: 4;
+}
