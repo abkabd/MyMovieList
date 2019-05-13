@@ -7,27 +7,12 @@
         <button class="btn" type="submit">Go!</button>
     </form>
   </div>
-      <div>
-
-        <ul>
-          <li><a routerLink="">Main</a></li>
-        </ul>
-
-        <ul>
-          <li>
-            <a routerLink="movies">Movies</a>
-          </li>
-        </ul>
-
-        <ul>
-            <li>
-              <a routerLink="movie">Movie</a>
-            </li>
-          </ul>
-
-        <ul>
-          <li><a (click)="logout()">Logout</a></li>
-        </ul>        
+      <div class="flex-container">
+          <a routerLink="">Main </a>
+          <a routerLink="movies">Movies </a>
+          <a routerLink="movie">Movie </a>
+          <a (click)="logout()">Logout </a>
+     
       </div>
 </header>
   
