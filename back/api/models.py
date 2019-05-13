@@ -31,8 +31,7 @@ class Movie(models.Model):
         return f'{self.id}: {self.title}'
 
 class Customer(User):
-
-    my_movies = models.ManyToManyField(Movie)
+    my_movies = models.ManyToManyField(Movie, default=None)
 
 
 

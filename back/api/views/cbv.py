@@ -2,7 +2,7 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from api.models import Movie, Review
+from api.models import Movie, Review, Customer
 from api.serializers import ReviewSerializer, MovieSerializer
 
 class MovieDetail(APIView):
@@ -43,11 +43,11 @@ class MovieReviews(APIView):
         serializer = ReviewSerializer(reviews, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    # def post(self, request, pk):
-    #     serializer = ReviewSerializer(data=request.data)
-    #     if serializer.is_valid():
-    #         serializer.movie_id = pk
-    #         serializer.created_by = self.request.user
-    #         serializer.save()
-    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    #     return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    def post(self, request, pk):
+        request.data['movie_id']=pk
+        serializer = ReviewSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.movie_id = pk
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

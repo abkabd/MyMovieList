@@ -40,12 +40,13 @@ class CustomerSerializer2(serializers.ModelSerializer):
 class ReviewSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     text = serializers.CharField()
-    created_by = CustomerSerializer(read_only=True, allow_null=True)
     created_at = serializers.DateField(read_only=True)
-    movie_id = serializers.IntegerField(write_only=True)
+    movie_id = serializers.IntegerField()
+    created_by_id = serializers.IntegerField()
 
     def create(self, validated_data):
         review = Review(**validated_data)
+
         review.save()
         return review
 
