@@ -9,6 +9,8 @@ import { IMovie } from 'src/app/shared/models/models';
 export class MainComponent implements OnInit {
 
 
+  public str: any = 'http://localhost:8000';
+
   constructor(private provider: ProviderService) {
   }
 

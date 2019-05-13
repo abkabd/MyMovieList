@@ -12,3 +12,10 @@ class MovieList(generics.ListAPIView):
     def get_serializer_class(self):
         return MovieSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(owned_by=self.request.user)
+
+class MovieListDetail(generics.RetrieveUpdateAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+

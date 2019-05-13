@@ -14,5 +14,6 @@ export interface IMovie {
     title: string;
     rating: number;
     prod_year: number;
+    image: ImageBitmap;
     
 }
