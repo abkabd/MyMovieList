@@ -12,6 +12,7 @@ export class MoviesComponent implements OnInit {
   constructor(private provider: ProviderService) { }
 
   public all_movies: IMovie[] = [];
+  public str: any = 'http://localhost:8000';
 
   ngOnInit() {
     this.getAllMovies();
