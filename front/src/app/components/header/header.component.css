@@ -7,6 +7,4 @@ header{
     display: block;
     background: rgb(22, 22, 22);
     background-color: gray;
-    position: fixed !important;
-    z-index: 4;
 }

@@ -8,12 +8,6 @@ import { IMovie } from 'src/app/shared/models/models';
 })
 export class MainComponent implements OnInit {
 
-  public authorized = false;
-
-  public login = '';
-  public password = ''; 
-  public movies: IMovie[] = [];
-  public all_movies: IMovie[] = [];
 
   public str: any = 'http://localhost:8000';
 
@@ -21,48 +15,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAllMovies();
     
-    const token = localStorage.getItem('token');
-    if (token) {
-      this.authorized = true;
-    }
-
-    if (this.authorized) {
-      console.log(token);
-      this.getMovies();
-    }    
   }
 
-  auth() {
-    if (this.login !== '' && this.password !== '') {
-      console.log(this.login + this.password);
-      this.provider.auth(this.login, this.password).then(res => {
-        localStorage.setItem('token', res.token);
-        this.authorized = true;
-        
-      });
-    }
-  }
-
-  logout() {
-    this.provider.logout().then(res => {
-      this.authorized = false;
-      localStorage.clear();
-    });
-  }
-
-  getMovies() {
-    this.provider.getMovies().then(res => {
-      this.movies = res;
-      
-    });
-  }
-
-  getAllMovies(){
-    this.provider.getAllMovies().then(res => {
-      this.all_movies = res;
-      console.log(res);
-    });
-  }
 }

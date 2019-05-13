@@ -1,7 +1,18 @@
-<app-header></app-header>
-<div class="container">
-  <div class="container2">
-      <router-outlet></router-outlet>  
-  </div>
-</div>
-<app-footer></app-footer>
+<ng-container *ngIf="!authorized; else Auth">
+    <div class="login">
+        <h1>Welcome <br> to MyMovieList!</h1>
+        <input class="input" placeholder="Login" type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+        <br>
+        <input class="input" placeholder="Password" type="password"  id="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+        <br>
+        <div>
+            <button (click)="auth()">Log in</button>
+        </div>
+    </div>
+</ng-container>
+    
+<ng-template #Auth>
+    <app-header [authorized]="true" (output)="authorized=$event"></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</ng-template>
