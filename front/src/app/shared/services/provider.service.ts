@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import {IUser, IAuthResponse, IMovie } from '../models/models';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { MainService } from './main.service';
@@ -7,10 +7,17 @@ import { MainService } from './main.service';
 })
 export class ProviderService extends MainService {
 
+  public movieFromMovies;
+
   constructor(http: HttpClient) {
     super(http);
   }
   
+  sendMovie(movie: IMovie) {
+    this.movieFromMovies = movie;
+    localStorage.setItem('movieFromMovies', JSON.stringify(movie));
+  }
+
   auth(login: string, password: string): Promise<IAuthResponse> {
     return this.post('http://localhost:8000/api/login/', {
       username: login,

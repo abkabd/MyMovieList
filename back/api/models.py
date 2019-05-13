@@ -31,8 +31,7 @@ class Movie(models.Model):
         return f'{self.id}: {self.title}'
 
 class Customer(User):
-
-    my_movies = models.ManyToManyField(Movie)
+    my_movies = models.ManyToManyField(Movie, default=None)
 
 
 
@@ -45,4 +44,4 @@ class Review(models.Model):
     objects = ReviewManager()
 
     def __str__(self):
-        return f'{self.created_by}: {self.text}'
+        return f'{self.created_by}: {self.text} --- [ {self.created_at} ]'
