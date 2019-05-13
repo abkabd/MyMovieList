@@ -18,7 +18,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    localStorage.clear();
+    // localStorage.clear();
     const token = localStorage.getItem('token');
     if (token) {
       this.authorized = true;

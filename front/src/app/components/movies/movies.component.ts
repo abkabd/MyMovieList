@@ -25,4 +25,9 @@ export class MoviesComponent implements OnInit {
       console.log(this.all_movies);
     });
   }
+
+  sendMovie(movie: IMovie) {
+    this.provider.sendMovie(movie);
+    console.log("send " + movie.title);
+  }
 }
