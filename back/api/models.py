@@ -45,4 +45,4 @@ class Review(models.Model):
     objects = ReviewManager()
 
     def __str__(self):
-        return f'{self.created_by}: {self.text}'
+        return f'{self.created_by}: {self.text} --- [ {self.created_at} ]'
