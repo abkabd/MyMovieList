@@ -1,9 +1,19 @@
 <header>
-    
       <div>
         <ul>
-          <li><a routerLink="">Главная</a></li>
+          <li><a routerLink="">Main</a></li>
         </ul>
+
+        <ul>
+          <li>
+            <a routerLink="movies">Movies</a>
+          </li>
+        </ul>
+        <ul>
+          <li><a (click)="logout()">Logout</a></li>
+        </ul>
+
+
         <form>
           <input type="text" placeholder="Search">
           <button class="btn" type="submit">Search</button>

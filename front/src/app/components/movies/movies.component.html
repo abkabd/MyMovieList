@@ -1,0 +1,14 @@
+<p>
+  movies works!
+</p>
+
+<ng-container>
+    <div *ngFor="let movie of all_movies">
+      <ul>
+        <li>{{movie.title}}</li>
+        <li>{{movie.prod_year}}</li>
+        <img src="{{movie.image}}" alt="{{movie.title}} image">
+
+      </ul>
+    </div>
+  </ng-container>

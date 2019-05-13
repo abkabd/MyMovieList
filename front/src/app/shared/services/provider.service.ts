@@ -30,5 +30,4 @@ export class ProviderService extends MainService {
     return this.get('http://localhost:8000/api/movies/', {});
   }
 
-
 }

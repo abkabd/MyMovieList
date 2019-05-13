@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ClassProvider } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,34 +10,20 @@ import { FormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
-
-const appRoutes: Routes = [
-  {path: '', component: MainComponent},
-  /*
-  {path: 'about', component: AboutComponent},
-  {path: 'signUp', component: SignUpComponent},
-  {path: 'signIn', component: SignInComponent},
-  {path: 'signUpStudent', component: SignstudentComponent},
-  {path: 'signUpCompany', component: SigncompanyComponent},
-  {path: 'internship-element', component: InternshipComponent},
-  {path: 'internships', component: InternshipListComponent},
-  {path: '**', component: NotFoundComponent},
-  */
-
-]
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FormsModule,
   ],
