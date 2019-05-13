@@ -21,6 +21,7 @@ export class MoviesComponent implements OnInit {
   getAllMovies(){
     this.provider.getAllMovies().then(res => {
       this.all_movies = res;
+      console.log(this.all_movies);
     });
   }
 }
