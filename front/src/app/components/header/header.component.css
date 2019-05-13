@@ -6,5 +6,38 @@ header{
     height: auto;
     display: block;
     background: rgb(22, 22, 22);
-    background-color: gray;
+    background-color: orange;
+}
+
+#logo{
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 130px;
+}
+
+#search_box{
+    width: 300px;
+    height: 50px;
+    font-size: 36px;
+    color: black;
+    position: absolute;
+    top: 120px;
+    left: 570px;
+    margin-right: 50px;
+    border: black solid 3px;
+    border-radius: 5px; 
+    text-align: center;
+}
+
+.btn{
+    position: absolute;
+    top: 120px;
+    left: 900px;
+    height: 55px;
+    border: black solid 3px;
+    border-radius: 5px; 
+    background-color: brown;
+    font-size: 36px;
+    color: white;
+
 }
