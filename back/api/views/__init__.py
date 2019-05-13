@@ -1,3 +1,3 @@
 from .generic_cbv import MovieList
 from .auth import UserList, login, logout
-from .fbv import get_movies
+from .fbv import get_movies, movielist_detail

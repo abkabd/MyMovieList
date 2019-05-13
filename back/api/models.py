@@ -10,11 +10,16 @@ class ReviewManager(models.Manager):
         return self.filter(movie=pk)
 
 class Movie(models.Model):
+    CHOICES = (
+        ('n', 'None'),
+        ('p', 'planned'),
+        ('w', 'watched'),
+    )
     title = models.CharField(max_length=200)
     rating = models.IntegerField()
     prod_year = models.IntegerField()
     image = models.ImageField(upload_to='', blank=True, null=True)
-    owned_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None, null=True)
+    type = models.CharField(max_length=50, choices=CHOICES, default='n', null=True)
 
     objects = MovieManager()
 
@@ -25,10 +30,16 @@ class Movie(models.Model):
     def __str__(self):
         return f'{self.id}: {self.title}'
 
+class Customer(User):
+
+    my_movies = models.ManyToManyField(Movie)
+
+
+
 class Review(models.Model):
     text = models.CharField(max_length=200)
-    created_at = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None, null=True)
+    created_at = models.DateField(auto_now_add=True)
+    created_by = models.ForeignKey(Customer, on_delete=models.CASCADE, default=None, null=True)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="reviews")
 
     objects = ReviewManager()

@@ -15,7 +15,7 @@ class MovieList(generics.ListAPIView):
     def perform_create(self, serializer):
         serializer.save(owned_by=self.request.user)
 
-class MovieListDetail(generics.RetrieveUpdateAPIView):
+class MovieListDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 

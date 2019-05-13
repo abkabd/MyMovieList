@@ -8,4 +8,5 @@ urlpatterns = [
     path('my_movies/', views.MovieList.as_view()),
     path('movies/', views.get_movies),
     path('users/', views.UserList.as_view()),
+    path('test/<int:pk>/', views.movielist_detail),
 ]
