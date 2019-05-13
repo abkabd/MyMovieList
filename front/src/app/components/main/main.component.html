@@ -12,8 +12,10 @@
     <ng-container>
       <div *ngFor="let movie of all_movies">
         <ul>
+          <!-- <img src="{{str}}" alt=""> -->
           <li>{{movie.title}}</li>
           <li>{{movie.prod_year}}</li>
+          <img src="{{str + movie.image}}">
         </ul>
       </div>
     </ng-container>

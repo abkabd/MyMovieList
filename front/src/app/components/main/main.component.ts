@@ -15,6 +15,8 @@ export class MainComponent implements OnInit {
   public movies: IMovie[] = [];
   public all_movies: IMovie[] = [];
 
+  public str: any = 'http://localhost:8000';
+
   constructor(private provider: ProviderService) {
   }
 
@@ -29,9 +31,7 @@ export class MainComponent implements OnInit {
     if (this.authorized) {
       console.log(token);
       this.getMovies();
-    }
-
-    
+    }    
   }
 
   auth() {
@@ -55,12 +55,14 @@ export class MainComponent implements OnInit {
   getMovies() {
     this.provider.getMovies().then(res => {
       this.movies = res;
+      
     });
   }
 
   getAllMovies(){
     this.provider.getAllMovies().then(res => {
       this.all_movies = res;
+      console.log(res);
     });
   }
 }
