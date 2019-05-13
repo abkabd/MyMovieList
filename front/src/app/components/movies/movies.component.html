@@ -3,12 +3,12 @@
 </p>
 
 <ng-container>
-    <button (click)="getAllMovies()">get all movies</button>
-    <div *ngFor="let movie of all_movies">
-      <ul>
-        <li>{{movie.title}}</li>
-        <li>{{movie.prod_year}}</li>
-        <img src="{{str + movie.image}}" alt="{{movie.title}} image" height="200px">
-      </ul>
+    <div *ngFor="let movie of all_movies" [routerLink]="[ '/movie' ]" (click)="sendMovie(movie)">
+       
+          <ul>
+            <li>{{movie.title}}</li>
+            <li>{{movie.prod_year}}</li>
+            <img src="{{str + movie.image}}" alt="{{movie.title}} image" height="200px">
+          </ul>
     </div>
   </ng-container>
