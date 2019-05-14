@@ -61,7 +61,8 @@ class MovieSerializer(serializers.ModelSerializer):
     prod_year = serializers.IntegerField(required=True)
     image = serializers.ImageField()
     reviews = ReviewSerializer(many=True)
+    rating = serializers.IntegerField()
 
     class Meta:
         model = Movie
-        fields = ('id', 'title', 'prod_year', 'image', 'reviews',)
+        fields = ('id', 'title', 'prod_year', 'image', 'reviews', 'rating')
