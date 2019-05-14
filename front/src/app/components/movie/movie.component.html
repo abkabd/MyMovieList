@@ -2,11 +2,22 @@
   movie works!
 </p>
 
-<h1>{{movie.title}} exists</h1>
-<!-- 
-<div *ngIf="!movie == null">
-</div>
 
-<div *ngIf="movie == null">
-    <h1>Does not exists</h1>
-  </div> -->
+<h1>{{movie.title}}</h1>
+<img src="{{'http://localhost:8000' + movie.image}}" alt="{{movie.title}}">
+<div><h3>{{movie.rating}}</h3></div>
+<div><h3>{{movie.prod_year}}</h3></div>
+
+<div class="content" *ngFor="let review of movie.rewiews">
+    <p>
+      <strong>KBTU inc. </strong> <small>@kbtu</small>
+      <br>
+      text here
+    </p>
+
+    <p>
+        <small>@{{rewiew.created_by}}</small>
+        <br>
+        {{rewiew.text}}
+      </p>
+</div>

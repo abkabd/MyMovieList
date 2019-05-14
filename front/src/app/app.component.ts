@@ -20,15 +20,14 @@ export class AppComponent {
   ngOnInit() {
     // localStorage.clear();
     const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
     if (token) {
       this.authorized = true;
     }
 
     if (this.authorized) {
       console.log(token);
-    }
-
-    
+    }    
   }
 
   
@@ -37,6 +36,8 @@ export class AppComponent {
       console.log(this.login + this.password);
       this.provider.auth(this.login, this.password).then(res => {
         localStorage.setItem('token', res.token);
+        // localStorage.setItem('username', res.username);
+
         this.authorized = true;
         
       });
