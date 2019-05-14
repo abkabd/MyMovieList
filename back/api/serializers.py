@@ -10,9 +10,10 @@ from django.contrib.auth.models import User
 #         fields = ('id', 'username', 'email',)
 
 class CustomerSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Customer
-        fields = ('id', 'username', 'email', 'my_movies',)
+        fields = ('id', 'username', 'email',)
 
 
 class CustomerSerializer2(serializers.ModelSerializer):
