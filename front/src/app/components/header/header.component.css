@@ -5,6 +5,55 @@ header{
     min-width: 1300px;
     height: auto;
     display: block;
-    background: rgb(22, 22, 22);
-    background-color: gray;
+    /* background: rgb(22, 22, 22); */
+    background-color: #FCCB52;
 }
+
+#logo{
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 130px;
+}
+
+#search_box{
+    width: 300px;
+    height: 50px;
+    font-size: 36px;
+    color: black;
+    position: absolute;
+    top: 120px;
+    left: 570px;
+    margin-right: 50px;
+    border: black solid 3px;
+    border-radius: 5px; 
+    text-align: center;
+}
+
+.btn{
+    position: absolute;
+    top: 120px;
+    left: 900px;
+    height: 55px;
+    border: black solid 3px;
+    border-radius: 5px; 
+    background-color: #323031;
+    font-size: 36px;
+    color: white;
+
+}
+.flex-container{
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    top: 0px;
+    margin-left: 500px;
+    color:#323031;
+}
+
+.flex-container > a{
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }

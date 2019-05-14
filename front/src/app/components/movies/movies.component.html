@@ -1,11 +1,19 @@
+<<<<<<< HEAD
+=======
+<!-- <p>
+  movies works!
+</p> -->
+<body>
+>>>>>>> 5e260642b6e14da77b897eb8091d32c8543d1716
 
 <ng-container>
     <div *ngFor="let movie of all_movies" [routerLink]="[ '/movie' ]" (click)="sendMovie(movie)">
        
-          <ul>
-            <li>{{movie.title}}</li>
-            <li>{{movie.prod_year}}</li>
+          <div class="movie-block">
+            {{movie.title}}
+            {{movie.prod_year}}
             <img src="{{str + movie.image}}" alt="{{movie.title}} image" height="200px">
-          </ul>
+          </div>
     </div>
   </ng-container>
+</body>
