@@ -9,10 +9,16 @@ from django.contrib.auth.models import User
 #         model = User
 #         fields = ('id', 'username', 'email',)
 
-class CustomerSerializer(serializers.ModelSerializer):
+class OwnedMovies(serializers.ModelSerializer):
     class Meta:
         model = Customer
-        fields = ('id', 'username', 'email', 'my_movies',)
+        fields = ('my_movies',)
+
+class CustomerSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Customer
+        fields = ('id', 'username', 'email',)
 
 
 class CustomerSerializer2(serializers.ModelSerializer):
@@ -60,8 +66,10 @@ class MovieSerializer(serializers.ModelSerializer):
     title = serializers.CharField(required=True)
     prod_year = serializers.IntegerField(required=True)
     image = serializers.ImageField()
+    status = serializers.CharField()
     reviews = ReviewSerializer(many=True)
+    rating = serializers.IntegerField()
 
     class Meta:
         model = Movie
-        fields = ('id', 'title', 'prod_year', 'image', 'reviews',)
+        fields = ('id', 'title', 'prod_year', 'image', 'reviews', 'rating', 'status',)

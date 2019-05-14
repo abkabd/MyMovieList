@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import {IUser, IAuthResponse, IMovie } from '../models/models';
+import {IUser, IAuthResponse, IMovie, IReview } from '../models/models';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { MainService } from './main.service';
 @Injectable({
@@ -39,5 +39,40 @@ export class ProviderService extends MainService {
 
   getUser(id: number): Promise<IUser>{
     return this.get(`http://localhost:8000/api/customers/${id}/`, {});
+  }
+
+  getCurUser():Promise<IUser>{
+    return this.get('http://localhost:8000/api/customers/current/', {});
+  }
+
+  createUser(username:string, email:string, password:string):Promise<IUser>{
+    return this.post('http://localhost:8000/api/customers/create/', {
+        username: username,
+        email: email, 
+        password: password, 
+        is_staff: false
+    });
+  }
+  
+  getOwnedMovieList(userId: number):Promise<number[]>{
+    return this.get(`http://localhost:8000/api/customers/${userId}/my_movies/`, {})
+  }
+
+  putOwnedMovieList(userId: number, my_movies: number[]): Promise<number[]>{
+    return this.put(`http://localhost:8000/api/customers/${userId}/my_movies/`, {
+      my_movies: my_movies
+    })
+  }
+
+  postReview(movieId: number, userId: number, text: string):Promise<IReview>{
+    return this.post(`http://localhost:8000/api/movies/${movieId}/reviews/`, {
+      text: text,
+      movie_id: movieId,
+      created_by_id: userId
+    })
+  }
+
+  getMovieById(movieId: number): Promise<IMovie>{
+    return this.get(`http://localhost:8000/api/movies/${movieId}/`, {});
   }
 }

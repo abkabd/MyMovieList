@@ -1,12 +1,17 @@
 <body>
   <ng-container>
-    <div *ngFor="let movie of all_movies" [routerLink]="[ '/movie' ]" (click)="sendMovie(movie)">
+    <div *ngFor="let movie of all_movies" >
        
           <div class="movie-block">
             {{movie.title}}
+            <br>
             {{movie.prod_year}}
-            <img src="{{str + movie.image}}" alt="{{movie.title}} image" height="200px">
+            <br>
+            <img src="{{str + movie.image}}" alt="{{movie.title}} image" height="200px" [routerLink]="[ '/movie' ]" (click)="sendMovie(movie)">
+            <br>
+            <button (click)="addToMovieList(movie)">Watch later</button>
           </div>
+
     </div>
   </ng-container>
 </body>

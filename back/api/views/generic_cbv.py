@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from api.models import Movie
-from api.serializers import MovieSerializer
+from api.models import Movie, Review, Customer
+from api.serializers import MovieSerializer, ReviewSerializer, CustomerSerializer, OwnedMovies
 
 class MovieList(generics.ListAPIView):
     permission_classes = (IsAuthenticated, )
@@ -14,6 +14,21 @@ class MovieList(generics.ListAPIView):
 
     def perform_create(self, serializer):
         serializer.save()
+
+class ReviewList(generics.ListCreateAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+
+
+class CustomerDetail(generics.RetrieveAPIView):
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
+
+
+class ShowOwnedMovies(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Customer.objects.all()
+    serializer_class = OwnedMovies
+
 
 
 

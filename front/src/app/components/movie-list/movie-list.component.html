@@ -1,4 +1,18 @@
-<p>
-  movie-list works!
-</p>
+<div class="content" *ngFor="let movie of movielist" >
 
+  <div class="movie-block">
+    {{movie.title}}
+    {{movie.prod_year}}
+    <img src="{{'http://localhost:8000' + movie.image}}" alt="{{movie.title}} image" height="200px">
+  </div>
+</div>
+
+
+<div *ngFor="let movie of all_movies" [routerLink]="[ '/movie' ]" (click)="sendMovie(movie)">
+       
+  <div class="movie-block">
+    {{movie.title}}
+    {{movie.prod_year}}
+    <img src="{{str + movie.image}}" alt="{{movie.title}} image" height="200px">
+  </div>
+</div>

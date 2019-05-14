@@ -1,9 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class MovieManager(models.Manager):
-    def for_user(self, user):
-        return self.filter(owned_by=user)
+# class MovieManager(models.Manager):
+#     def for_user(self, user):
+#         return self.filter(owned_by=user)
 
 class ReviewManager(models.Manager):
     def for_movie(self, pk):
@@ -19,9 +19,9 @@ class Movie(models.Model):
     rating = models.IntegerField()
     prod_year = models.IntegerField()
     image = models.ImageField(upload_to='', blank=True, null=True)
-    type = models.CharField(max_length=50, choices=CHOICES, default='n', null=True)
+    status = models.CharField(max_length=50, choices=CHOICES, default='n', null=True)
 
-    objects = MovieManager()
+    # objects = MovieManager()
 
     class Meta:
         verbose_name = 'Movie'
@@ -31,7 +31,7 @@ class Movie(models.Model):
         return f'{self.id}: {self.title}'
 
 class Customer(User):
-    my_movies = models.ManyToManyField(Movie, default=None)
+    my_movies = models.ManyToManyField(Movie)
 
 
 

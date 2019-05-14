@@ -47,7 +47,7 @@ class MovieReviews(APIView):
         request.data['movie_id']=pk
         serializer = ReviewSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.movie_id = pk
+            # serializer.movie_id = pk
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

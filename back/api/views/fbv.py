@@ -2,7 +2,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from api.models import Movie
-from api.serializers import MovieSerializer
+from api.serializers import MovieSerializer, CustomerSerializer, OwnedMovies
 from django.http import Http404
 
 @api_view(['GET'])
@@ -28,4 +28,26 @@ def movielist_detail(request, pk):
         return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     return Response({'error': 'bad request'})
 
+@api_view(['GET'])
+def identify(request):
+    if request.user.is_authenticated:
+        serializer = CustomerSerializer(request.user)
 
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    else:
+        exception = {"detail": "Authentication credentials were not provided."}
+
+        return Response(exception, status=status.HTTP_401_UNAUTHORIZED)
+
+# @api_view(['GET', 'PUT', 'DELETE',])
+# def show_my_movies(request):
+#     if request.user.is_authenticated:
+#         serializer = OwnedMovies(request.user)
+#
+#         return Response(serializer.data, status=status.HTTP_200_OK)
+#
+#     else:
+#         exception = {"detail": "Authentication credentials were not provided."}
+#
+#         return Response(exception, status=status.HTTP_401_UNAUTHORIZED)

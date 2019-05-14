@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #c99034;
+}
+/* router-outlet {
+    position: absolute;
+  }
+*/
+#body {
+    padding:10px;
+    padding-bottom:60px;   /* Height of the footer */
+ }
+ #footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    background:#6cf;
+ }

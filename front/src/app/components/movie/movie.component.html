@@ -1,19 +1,28 @@
-<h1>{{movie.title}}</h1>
-<img src="{{'http://localhost:8000' + movie.image}}" alt="{{movie.title}}">
-<div><h3>{{movie.rating}}</h3></div>
-<div><h3>{{movie.prod_year}}</h3></div>
-
-<div class="content" *ngFor="let review of movie.reviews">
-    <p>
-      <strong>KBTU inc. </strong> <small>@kbtu</small>
-      <br>
-      
-    </p>
-
-    <p>
-        <small>@{{getUser(review.created_by_id)}}</small>
-        <br>
-        text:
-        {{review.text}}
-      </p>
+<div class="block">
+<div class="movie-description"> 
+    <h1>Title: {{movie.title}}</h1>
+    <div><h3>Rating: {{movie.rating}}</h3></div>
+    <div><h3>Prod year: {{movie.prod_year}}</h3></div>
 </div>
+
+<div class="image">
+    <img src="{{'http://localhost:8000' + movie.image}}" alt="{{movie.title}}" height="350px">
+</div>
+
+<div class="comments">
+    <div>
+        <input class="comment-box" type="text" placeholder="Comment!" [(ngModel)]="text" [ngModelOptions]="{standalone:true}">
+        <button (click)="postReview()">Post</button>
+      </div>
+
+    <div class="content" *ngFor="let review of reviews" >    
+        <p class="comment">        
+            <small>@{{review.user}}</small>
+            <br>
+            text:
+            {{review.text}}
+        </p>
+    </div>   
+</div>
+</div>
+

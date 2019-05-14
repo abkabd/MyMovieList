@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     FooterComponent,
     MoviesComponent,
     MovieComponent,
-    MovieListComponent
+    MovieListComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
