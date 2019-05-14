@@ -9,9 +9,11 @@ from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
 
+
 class CustomerList(generics.ListAPIView):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
+
 
 @api_view(['POST'])
 def login(request):
@@ -21,6 +23,7 @@ def login(request):
     token, created = Token.objects.get_or_create(user=user)
     return Response({'token': token.key,
                      'username': user.username})
+
 
 @api_view(['POST'])
 def logout(request):
