@@ -22,7 +22,7 @@ header{
     color: black;
     position: absolute;
     top: 13%;
-    left: 630px;
+    left: 690px;
     margin-right: 50px;
     border: black solid 3px;
     border-radius: 5px; 
@@ -32,7 +32,7 @@ header{
 .btn{
     position: absolute;
     top: 13%;
-    left: 960px;
+    left: 1020px;
     height: 55px;
     border: black solid 3px;
     border-radius: 5px; 
@@ -46,7 +46,7 @@ header{
     flex-wrap: nowrap;
     position: relative;
     top: 0px;
-    margin-left: 500px;
+    left: 630px;
     color:#323031;
 }
 

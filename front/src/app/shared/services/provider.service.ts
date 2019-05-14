@@ -49,6 +49,13 @@ export class ProviderService extends MainService {
     return this.get(`http://localhost:8000/api/customers/${userId}/my_movies/`, {})
   }
 
+  
+  putOwnedMovieList(userId: number, my_movies: number[]): Promise<number[]>{
+    return this.put(`http://localhost:8000/api/customers/${userId}/my_movies/`, {
+      my_movies: my_movies
+    })
+  }
+
   postReview(movieId: number, userId: number, text: string):Promise<IReview>{
     return this.post(`http://localhost:8000/api/movies/${movieId}/reviews/`, {
       text: text,
