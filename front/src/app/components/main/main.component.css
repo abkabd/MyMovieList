@@ -8,6 +8,7 @@
     text-align: center;
     margin-left: 70px;
     margin-top: 100px;
+    font-family: 'Quicksand', sans-serif;
   }
 
   #loading-bar-spinner.spinner {

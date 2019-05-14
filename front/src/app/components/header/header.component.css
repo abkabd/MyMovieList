@@ -46,8 +46,9 @@ header{
     flex-wrap: nowrap;
     position: relative;
     top: 0px;
-    left: 630px;
+    left: 600px;
     color:#323031;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .flex-container > a{

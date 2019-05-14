@@ -25,6 +25,7 @@
     width: 25%; /* three boxes (use 25% for four, and 50% for two, etc) */
     padding: 50px; /* if you want space between the images */
     font-size: 38px;
+    font-family: 'Quicksand', sans-serif;
   }
 
   button{
