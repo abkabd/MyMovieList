@@ -1,18 +1,20 @@
 <header>
-  <div>
-    
     <form>
         <img id ="logo" src="assets/img/logo-movie-list.png">
         <input id="search_box" type="text" placeholder="Search">
         <button class="btn" type="submit">Go!</button>
     </form>
-  </div>
-      <div class="flex-container">
-          <a routerLink="">Main </a>
-          <a routerLink="movies">Movies </a>
-          <a routerLink="movie">Movie </a>
-          <a (click)="logout()">Logout </a>
-     
-      </div>
+
+    <div class="flex-container">
+        <a routerLink="">Main</a>
+        <a routerLink="movies">Movies</a>
+        <a routerLink="movielist">My list</a>
+        <a (click)="logout()">Logout</a>
+        
+        <form>
+          <input type="text" placeholder="Search">
+          <button class="btn" type="submit">Search</button>
+        </form>
+    </div>
 </header>
   

@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MovieComponent } from './components/movie/movie.component';
     HeaderComponent,
     FooterComponent,
     MoviesComponent,
-    MovieComponent
+    MovieComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,

@@ -3,10 +3,18 @@ export interface IUser {
     password: string;
     username: string;
     email: string;
+    my_movies: number[];
 }
 
 export interface IAuthResponse {
     token: string;
+    username: string;
+}
+
+export interface IReview {
+    id: number;
+    text: string;
+    created_by_id: number;
 }
 
 export interface IMovie {
@@ -15,5 +23,6 @@ export interface IMovie {
     rating: number;
     prod_year: number;
     image: ImageBitmap;
-    
+    reviews: IReview[];
 }
+

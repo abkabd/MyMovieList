@@ -1,9 +1,5 @@
-<!-- <p>
-  movies works!
-</p> -->
 <body>
-
-<ng-container>
+  <ng-container>
     <div *ngFor="let movie of all_movies" [routerLink]="[ '/movie' ]" (click)="sendMovie(movie)">
        
           <div class="movie-block">

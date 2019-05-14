@@ -3,12 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 
 
 const routes: Routes = [
   {path: '', component: MainComponent},
   {path: 'movies', component: MoviesComponent},
   {path: 'movie', component: MovieComponent},
+  {path: 'movielist', component: MovieListComponent},
+
   /*
   {path: 'about', component: AboutComponent},
   {path: 'signUp', component: SignUpComponent},
