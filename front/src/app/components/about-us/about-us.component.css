@@ -1,0 +1,69 @@
+#heading{
+    text-align: center;
+    padding: 30px;
+}
+h1{
+    padding-top: 30px;
+    line-height: 60px;
+    font-family: 'Quicksand', sans-serif;
+}
+#about-us{
+    width: 100%;
+}
+#info{
+    margin-right: 150px;
+    margin-left: 150px;
+    line-height: 40px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 19px;
+}
+#team h1{
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#team {
+    /* width: 900px; */
+    text-align: center;
+    margin-right: 500px;
+    margin-left: 500px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.member1-pic {
+    width: 150px;
+    height: 150px;
+    float: left;
+    border: black solid;
+    border-radius: 100px;
+}
+.member2-pic {
+    width: 150px;
+    height: 150px;
+    float: right;
+    clear: both;
+    border: black solid;
+    border-radius: 100px;
+}
+
+
+.member{
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+#Aybek{
+    position: relative;
+    margin-right: 300px;
+}
+
+#Hafsa{
+    position: relative;
+    margin-left: 300px;
+}
+#Alibek{
+    position: relative;
+    margin-right: 300px;
+}
