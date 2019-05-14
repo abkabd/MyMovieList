@@ -26,3 +26,12 @@
     padding: 50px; /* if you want space between the images */
     font-size: 38px;
   }
+
+  button{
+    height: 45px;
+    border: black solid 3px;
+    border-radius: 5px; 
+    background-color: white;
+    font-size: 20px;
+    color:  #323031;
+  }
