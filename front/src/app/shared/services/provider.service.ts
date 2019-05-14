@@ -45,12 +45,19 @@ export class ProviderService extends MainService {
     return this.get('http://localhost:8000/api/customers/current/', {});
   }
 
-  postReview(movieId: number, userId: number, text: string):Promise<IReview>{
+  getOwnedMovieList(userId: number):Promise<number[]>{
+    return this.get(`http://localhost:8000/api/customers/${userId}/my_movies/`, {})
+  }
 
+  postReview(movieId: number, userId: number, text: string):Promise<IReview>{
     return this.post(`http://localhost:8000/api/movies/${movieId}/reviews/`, {
       text: text,
       movie_id: movieId,
       created_by_id: userId
     })
+  }
+
+  getMovieById(movieId: number): Promise<IMovie>{
+    return this.get(`http://localhost:8000/api/movies/${movieId}/`, {});
   }
 }

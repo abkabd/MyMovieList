@@ -12,6 +12,8 @@ urlpatterns = [
     path('customers/', views.CustomerList.as_view()),
     path('customers/current/', views.identify),
     path('customers/<int:pk>/', views.CustomerDetail.as_view()),
+    path('customers/<int:pk>/my_movies/', views.ShowOwnedMovies.as_view()),
+
     path('customers/create/', views.CustomerCreate.as_view()),
 
     path('movies/<int:pk>/', views.MovieDetail.as_view()),

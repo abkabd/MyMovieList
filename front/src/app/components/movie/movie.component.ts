@@ -53,6 +53,12 @@ export class MovieComponent implements OnInit {
       console.log("recieve " + this.movie.title);
   }
 
+  getOwnedMovieList(){
+    this.provider.getOwnedMovieList(this.user.id).then(res => {
+      
+    });
+  }
+
   postReview(){
     this.provider.postReview(this.movie.id, this.user.id, this.text).then(res => {
       this.review['user'] = this.user.username;
