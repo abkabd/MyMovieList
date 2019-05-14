@@ -45,11 +45,19 @@ export class ProviderService extends MainService {
     return this.get('http://localhost:8000/api/customers/current/', {});
   }
 
+  createUser(username:string, email:string, password:string):Promise<IUser>{
+    return this.post('http://localhost:8000/api/customers/create/', {
+        username: username,
+        email: email, 
+        password: password, 
+        is_staff: false
+    });
+  }
+  
   getOwnedMovieList(userId: number):Promise<number[]>{
     return this.get(`http://localhost:8000/api/customers/${userId}/my_movies/`, {})
   }
 
-  
   putOwnedMovieList(userId: number, my_movies: number[]): Promise<number[]>{
     return this.put(`http://localhost:8000/api/customers/${userId}/my_movies/`, {
       my_movies: my_movies

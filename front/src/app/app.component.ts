@@ -13,6 +13,8 @@ export class AppComponent {
   public authorized = false;
   public login = '';
   public password = ''; 
+  public to_reg = false;
+  public email = '';
 
   constructor(private provider: ProviderService) {
   }
@@ -27,9 +29,12 @@ export class AppComponent {
 
     if (this.authorized) {
       console.log(token);
-    }    
+    }
   }
 
+  changeReg(){
+    this.to_reg = !this.to_reg;
+  }
   
   auth() {
     if (this.login !== '' && this.password !== '') {
@@ -41,6 +46,19 @@ export class AppComponent {
         this.authorized = true;
         
       });
+    }
+  }
+
+  reg(){
+    if (this.login !== '' && this.password !== '') {
+      console.log(this.login + this.password);
+      this.provider.createUser(this.login, this.email, this.password).then(res => {
+        console.log(res);
+        alert('New user created!');
+        this.auth();
+
+      });
+
     }
   }
 
