@@ -51,4 +51,30 @@ export class MovieListComponent implements OnInit {
       console.log(this.user);
     });
   }
+
+  deleteFromMovieList(movie: IMovie) {
+    this.provider.getCurUser().then(res => {
+      this.user = res;
+      this.provider.getOwnedMovieList(this.user.id).then(rs => {
+        this.user.my_movies = rs['my_movies'];
+        const index = this.user.my_movies.indexOf(movie.id);
+        this.user.my_movies.splice(index, 1);
+
+        console.log(this.user.my_movies);
+
+        this.provider.putOwnedMovieList(this.user.id, this.user.my_movies).then(res => {
+          this.user.my_movies = res['my_movies'];
+          console.log(this.user);
+          this.movielist = [];
+          
+          this.getMovieList();
+        });
+
+      });
+    console.log(res);
+    });
+
+
+    
+  }
 }
