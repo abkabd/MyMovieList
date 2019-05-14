@@ -1,0 +1,28 @@
+* {
+    background-color: #c99034;
+    
+}
+/* .movie-block{
+    padding: 100px;
+    position: relative;
+    background-size: cover;
+    display: inline-block;
+    display: flex;
+    flex-flow: nowrap; 
+} 
+.movie-block > div {
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  } 
+.movie-block img{
+    position: absolute;
+} */
+.movie-block {
+    box-sizing: border-box;
+    float: left;
+    width: 25%; /* three boxes (use 25% for four, and 50% for two, etc) */
+    padding: 50px; /* if you want space between the images */
+    font-size: 36px;
+  }
