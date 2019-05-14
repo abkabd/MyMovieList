@@ -5,8 +5,19 @@ body{
 }
 .login {
     position: absolute;
-    left: 45%;
+    left: 35%;
     top: 20%;
+    text-align: center;
+    color: green;
+    padding: 30px;
+    border-radius: 14px;
+
+}
+
+.signUp {
+    position: absolute;
+    left: 35%;
+    top: 18%;
     text-align: center;
     color: green;
     padding: 30px;

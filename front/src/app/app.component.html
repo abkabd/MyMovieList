@@ -1,14 +1,40 @@
 <ng-container *ngIf="!authorized; else Auth">
-    <div class="login">
-        <h1>Welcome <br> to MyMovieList!</h1>
-        <input class="input" placeholder="Login" type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
-        <br>
-        <input class="input" placeholder="Password" type="password"  id="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
-        <br>
-        <div>
-            <button (click)="auth()">Log in</button>
+    <ng-container *ngIf="!to_reg">
+        <div class="login">
+                <h1>Welcome <br> to MyMovieList!</h1>
+                <input class="input" placeholder="Login" type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+                <br>
+                <input class="input" placeholder="Password" type="password"  id="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+                
+                <div>
+                    <button (click)="auth()">Log in</button>
+                </div>
+                <br>
+                <div>
+                    <button (click)="changeReg()">Create new account</button>
+                </div>
         </div>
-    </div>
+    </ng-container>
+
+    <ng-container *ngIf="to_reg">
+        <div class="signUp">
+            <h1>Registration Page</h1>
+            <input class="input" placeholder="Login" type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+            <br>
+            <input class="input" placeholder="Password" type="password"  id="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+            <br>
+            <input class="input" placeholder="Email" type="text"  id="email" [(ngModel)]="email" [ngModelOptions]="{standalone:true}"/>
+    
+            <div>
+                <button (click)="reg()">Create</button>
+            </div>
+            
+            <br>
+            <div>
+                <button (click)="changeReg()">Back</button>
+            </div>
+        </div>
+    </ng-container>
 </ng-container>
     
 <ng-template #Auth>
@@ -16,3 +42,4 @@
     <router-outlet></router-outlet>
     <app-footer></app-footer>
 </ng-template>
+
