@@ -16,32 +16,14 @@ export class MovieListComponent implements OnInit {
   public user: IUser = null;
 
   ngOnInit() {
-    this.getUser();
     this.getMovieList();
-
-
-
-    
-
-
-
-
-
-  }
-
-
-  getUser(){
-    
-    console.log(this.user);
-
-
   }
 
   getMovieList(){
     this.provider.getCurUser().then(res => {
       this.user = res;
       console.log(this.user);
-
+      this.user.my_movies = res['my_movies'];
       this.provider.getOwnedMovieList(this.user.id).then(res => {
         console.log(res);
         console.log(res['my_movies']);
@@ -56,8 +38,17 @@ export class MovieListComponent implements OnInit {
         console.log(this.movielist);
       });
    });
+  }
 
 
+  putOwnedMovieList(){
+    this.provider.getCurUser().then(res => {
+      this.user.my_movies = res['my_movies'];
+    });
 
+    this.provider.putOwnedMovieList(this.user.id, this.user.my_movies).then(res => {
+      this.user.my_movies = res['my_movies'];
+      console.log(this.user);
+    });
   }
 }

@@ -67,6 +67,6 @@ export class MovieComponent implements OnInit {
     });
 
     this.text = '';
-
   }
+
 }
