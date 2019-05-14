@@ -14,7 +14,7 @@ export interface IAuthResponse {
 export interface IReview {
     id: number;
     text: string;
-    created_by: string;
+    created_by_id: number;
 }
 
 export interface IMovie {

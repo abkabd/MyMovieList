@@ -37,4 +37,7 @@ export class ProviderService extends MainService {
     return this.get('http://localhost:8000/api/movies/', {});
   }
 
+  getUser(id: number): Promise<IUser>{
+    return this.get(`http://localhost:8000/api/customers/${id}/`, {});
+  }
 }
