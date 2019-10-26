@@ -45,3 +45,11 @@ class Review(models.Model):
 
     def __str__(self):
         return f'{self.created_by}: {self.text} --- [ {self.created_at} ]'
+    
+class Comment(models.Model):
+    created_at = models.DateField(auto_now_add=True)
+    author = models.ForeignKey(Customer, on_delete=models.CASCADE, default=None, null=True)
+    title = models.CharField(max_length=150)
+    
+    def __str__(self):
+        return f'{self.author}: {self.title} --- [ {self.created_at} ]'
